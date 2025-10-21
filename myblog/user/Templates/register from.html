@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{% block body %}
+<div class="row justify-content-center bg-light ">
+    <div class="col-sm-5 ">
+        <h2 class="text-center text-primary"> Register </h2>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="{{from.username.id_for_label}}"> Username </label>
+        <input type="text" name="{{from.username.name}}" class="form-control rounded" value="{{from.username.value}}" placeholder="Enter your Username."/>
+        <span class="text-danger">{{from.username.errors}}</span>
+
+        <label for="{{from.first_name.id_for_label}}"> First Name </label>
+        <input type="text" name="{{from.first_name.name}}" class="form-control rounded" value="{{from.first_name.value}}" placeholder="Enter your First name."/>
+        <span class="text-danger">{{from.first_name.errors}}</span>
+
+        <label for="{{from.last_name.id_for_label}}"> Last Name </label>
+        <input type="text" name="{{from.last_name.name}}" class="form-control rounded" value="{{from.last_name.value}}" placeholder="Enter your Last name."/>
+        <span class="text-danger">{{from.last_name.errors}}</span>
+
+        <label for="{{from.email.id_for_label}}"> Email Id </label>
+        <input type="text" name="{{from.email.name}}" class="form-control rounded" value="{{from.email.value}}" placeholder="Enter your Email Id."/>
+        <span class="text-danger">{{from.email.errors}}</span>
+
+        <label for="{{from.password1.id_for_label}}"> Password </label>
+        <input type="text" name="{{from.password1.name}}" class="form-control rounded" value="{{from.password1.value}}" placeholder="Enter your Password." data-toggle="tooltip" data-placement="right" title="It must contain at least 8 characters"/>
+        <span class="text-danger">{{from.password1.errors}}</span>
+        <label for="{{from.password2.id_for_label}}"> Confirm Password </label>
+        <input type="text" name="{{from.password2.name}}" class="form-control rounded" value="{{from.password2.value}}" placeholder="Re-Enter your Password."/>
+        <span class="text-danger">{{from.password2.errors}}</span>
+        <br>
+        <button class="btn btn-outline-success rounded" type="submit"> Sing up </button>
+        <a class="badge badge-info" href="{%url 'login'%}" >already have a account </a>
+    </div>
+</form>
+</div>
+</div>
+{% endblock %}

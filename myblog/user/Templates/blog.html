@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container ">
+      <div class="row">
+          {%for blog in blog_lst%}
+            <div class="col-md-6 p-3 ">
+
+              <img src="{{blog.blog_pic.url}}" alt="Image" class="d-block w-100">
+            </div>
+            <div class="col-md-3 p-3">
+              <h2>{{blog.blog_name}}</h2>
+              <p>{{blog.blog_info}}</p>
+            </div>
+          <div class="col-md-3 p-3">
+              <a href="{% url 'Full_view' blog.id%}" ><button class="bg-primary" type="button"  >Read more</button></a>
+            </div>
+          {%endfor%}
+      </div>
+    </div>
+{% endblock %}
+

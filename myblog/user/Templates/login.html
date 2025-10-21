@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block body %}
+<div class="container h-75 bg-secondary mt-5">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <h3 class="card-title text-center mb-4">Login</h3>
+
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-danger">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+
+          <form method="post">
+            {% csrf_token %}
+            <input type="hidden"next" value="{{ next }}">
+
+            <div class="form-group">
+              {{ form.username.label_tag }}
+              {{ form.username }}
+            </div>
+
+            <div class="form-group">
+              {{ form.password.label_tag }}
+              {{ form.password }}
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <a class="badge badge-info mt-2" href="{% url 'register' %}">Register</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

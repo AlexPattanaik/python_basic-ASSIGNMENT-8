@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block body%}
+<div >
+<div class="container ">
+      <div class="row">
+
+            <div class="col-md-12 p-3 ">
+                <h2>{{blog_full.blog_name}}</h2>
+              <img src="{{blog_full.blog_pic.url}}" alt="Image" class="d-block w-100">
+                <h3>{{blog_full.blog_info}}</h3>
+                <p>{{blog_full.blog_detail}}</p>
+            </div>
+      </div>
+    </div>
+
+
+</div>
+{%endblock%}
